@@ -78,7 +78,7 @@ python evaluate_ood_scores.py
 
 ## 📊 Dataset
 
-Due to privacy and copyright concerns, the raw APK files cannot be shared. However, we provide the **processed API sequences** (integer-mapped) used in our experiments to facilitate reproducibility.
+Due to privacy and copyright concerns, the raw APK files cannot be shared. However, we provide the **processed API sequences** used in our experiments to facilitate reproducibility.
 
 ## 📜 Citation
 
