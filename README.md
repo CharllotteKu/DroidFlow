@@ -1,3 +1,4 @@
+
 # DroidFlow: Learning Behavioral Densities from Android API Sequences
 
 This is the official PyTorch implementation of the paper:
@@ -25,48 +26,89 @@ DroidFlow is a deep generative framework for Out-of-Distribution (OOD) Android m
 ## 🛠️ Requirements
 * Python 3.8+
 * PyTorch >= 1.10
-* See `requirements.txt` for details.
+* Dependencies are listed in `requirements.txt`. To install:
+```bash
+pip install -r requirements.txt
+
+```
 
 ## ⚡ Quick Start
 
-### 1. Train BiLSTM Encoder
-Prepare your IND dataset as `ind4.csv` (or modify the path in the script).
+### 1. Train BiLSTM Encoder & Extract IND Features
+
+Prepare your IND dataset (ensure it is named `ind4.csv` or update the path in the script).
+
 ```bash
 python bilstm_resflow_pipeline1.py
-Output: bilstm_model4.pth, features_for_resflow4.pt
+
+```
+
+> **Output:** `bilstm_model4.pth` (Model weights), `features_for_resflow4.pt` (Extracted IND features)
 
 ### 2. Train Flow Models
-Train the density estimators on the extracted features.
 
-Bash
+Train the density estimators on the extracted IND features.
 
+```bash
 python 111adv.py --feature_file features_for_resflow4.pt --outf saved_flow_models
-### 3. OOD Detection & Evaluation
-Run inference on mixed IND and OOD samples and calculate metrics.
 
-Bash
+```
 
+### 3. Prepare OOD Features
+
+Extract features from your OOD dataset using the trained BiLSTM model.
+
+```bash
+python extract_ood_features.py --csv_path ood_data.csv --model_path bilstm_model4.pth --outf features_ood.pt
+
+```
+
+*(Note: You may need to adjust the arguments based on your OOD data path)*
+
+### 4. OOD Detection & Evaluation
+
+Run inference on mixed IND and OOD samples to calculate anomaly scores and evaluation metrics.
+
+```bash
 python 222adv.py --feature_val features_for_resflow4.pt --feature_ood features_ood.pt --outf results
 python evaluate_ood_scores.py
-### 📊 Dataset
-Due to privacy and copyright concerns, the raw APK files cannot be shared. We provide the processed API sequences (integer-mapped) used in our experiments.
 
-### 📜 Citation
+```
+
+### 5. Efficiency Benchmark
+
+Run the computational efficiency test (Latency, FLOPs, Memory).
+
+```bash
+python benchmark_efficiency.py
+
+```
+
+## 📊 Dataset
+
+Due to privacy and copyright concerns, the raw APK files cannot be shared. However, we provide the **processed API sequences** (integer-mapped) used in our experiments to facilitate reproducibility.
+
+## 📜 Citation
+
 If you find this code useful, please cite our paper:
 
-Code snippet
-
+```bibtex
 @article{droidflow2026,
   title={DroidFlow: Learning Behavioral Densities from Android API Sequences},
-  author={Gu, Wanyi, et al.},
+  author={Gu, Wanyi and Wang, Guojun and Chen, Mingfei and others},
   journal={Journal of Systems Architecture},
   year={2026}
 }
 
+```
+
+```
+
 ---
 
-### **2. `requirements.txt` 
-**操作**：新建 `requirements.txt`，粘贴以下内容：
+### **文件 2：`requirements.txt`**
+
+请新建一个名为 `requirements.txt` 的文本文件，粘贴以下内容：
 
 ```text
 torch>=1.10.0
@@ -76,5 +118,9 @@ scikit-learn>=1.0.0
 matplotlib>=3.5.0
 seaborn>=0.11.0
 tqdm>=4.60.0
-thop>=0.1.0  
-psutil       # 用于计算内存占用
+thop>=0.1.0
+psutil
+
+```
+
+这样格式就完全正确了，可以直接上传 GitHub。
