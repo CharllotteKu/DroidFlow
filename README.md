@@ -80,6 +80,19 @@ python evaluate_ood_scores.py
 
 Due to privacy and copyright concerns, the raw APK files cannot be shared. However, we provide the **processed API sequences** used in our experiments to facilitate reproducibility.
 
+File Naming Logic: Leave-One-Out
+
+The files are named based on the class that is treated as Out-of-Distribution (OOD).
+
+ood1.csv: Contains samples from Class 1 only. In this experiment, Class 1 is treated as the anomaly (OOD).
+
+ind1.csv: Contains samples from all other classes (excluding Class 1). These are treated as the normal (In-Distribution) data.
+
+Ideally, indX.csv represents the normal data when Class X is held out as the anomaly.
+
+<img width="480" height="327" alt="image" src="https://github.com/user-attachments/assets/088a7a6d-976c-4023-9022-e651f0318772" />
+
+
 ## 📜 Citation
 
 If you find this code useful, please cite our paper:
