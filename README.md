@@ -109,22 +109,5 @@ If you find this code useful, please cite our paper:
 
 ```
 
----
 
-### **文件 2：`requirements.txt`**
-
-请新建一个名为 `requirements.txt` 的文本文件，粘贴以下内容：
-
-```text
-torch>=1.10.0
-numpy>=1.20.0
-pandas>=1.3.0
-scikit-learn>=1.0.0
-matplotlib>=3.5.0
-seaborn>=0.11.0
-tqdm>=4.60.0
-thop>=0.1.0
-psutil
-
-```
 
