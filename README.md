@@ -78,7 +78,9 @@ python evaluate_ood_scores.py
 
 ## 📊 Dataset
 
-Due to privacy and copyright concerns, the raw APK files cannot be shared. However, we provide the **processed API sequences** used in our experiments to facilitate reproducibility.
+Due to privacy and copyright concerns, the raw APK files cannot be shared. However, to facilitate reproducibility, we provide the processed API sequences used in our experiments.
+
+Data Access: The dataset is available at: https://pan.quark.cn/s/d020f384a92d
 
 File Naming Logic: Leave-One-Out
 
