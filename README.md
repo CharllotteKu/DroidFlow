@@ -75,14 +75,6 @@ python evaluate_ood_scores.py
 
 ```
 
-### 5. Efficiency Benchmark
-
-Run the computational efficiency test (Latency, FLOPs, Memory).
-
-```bash
-python benchmark_efficiency.py
-
-```
 
 ## 📊 Dataset
 
@@ -123,4 +115,3 @@ psutil
 
 ```
 
-这样格式就完全正确了，可以直接上传 GitHub。
