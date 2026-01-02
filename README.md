@@ -35,23 +35,23 @@ Prepare your IND dataset as `ind4.csv` (or modify the path in the script).
 python bilstm_resflow_pipeline1.py
 Output: bilstm_model4.pth, features_for_resflow4.pt
 
-2. Train Flow Models
+### 2. Train Flow Models
 Train the density estimators on the extracted features.
 
 Bash
 
 python 111adv.py --feature_file features_for_resflow4.pt --outf saved_flow_models
-3. OOD Detection & Evaluation
+### 3. OOD Detection & Evaluation
 Run inference on mixed IND and OOD samples and calculate metrics.
 
 Bash
 
 python 222adv.py --feature_val features_for_resflow4.pt --feature_ood features_ood.pt --outf results
 python evaluate_ood_scores.py
-📊 Dataset
+### 📊 Dataset
 Due to privacy and copyright concerns, the raw APK files cannot be shared. We provide the processed API sequences (integer-mapped) used in our experiments.
 
-📜 Citation
+### 📜 Citation
 If you find this code useful, please cite our paper:
 
 Code snippet
