@@ -1,10 +1,8 @@
 
-# DroidFlow: Learning Behavioral Densities from Android API Sequences for
-Out-of-Distribution Detection
+# DroidFlow: Learning Behavioral Densities from Android API Sequences for Out-of-Distribution Detection
 
 This is the official PyTorch implementation of the paper:
-**"DroidFlow: Learning Behavioral Densities from Android API Sequences for
-Out-of-Distribution Detection"** (Submitted to *Journal of Systems Architecture*)
+**"DroidFlow: Learning Behavioral Densities from Android API Sequences for Out-of-Distribution Detection"** (Submitted to *Journal of Systems Architecture*)
 
 **Authors:** Wanyi Gu, Guojun Wang, et al.
 
