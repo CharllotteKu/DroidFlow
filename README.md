@@ -101,8 +101,7 @@ If you find this code useful, please cite our paper:
 
 ```bibtex
 @article{droidflow2026,
-  title={DroidFlow: Learning Behavioral Densities from Android API Sequences for
-Out-of-Distribution Detection},
+  title={DroidFlow: Learning Behavioral Densities from Android API Sequences for Out-of-Distribution Detection},
   author={Gu, Wanyi and Wang, Guojun and Chen, Mingfei and others},
   journal={Journal of Systems Architecture},
   year={2026}
